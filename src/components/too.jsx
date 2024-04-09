@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Too = () => {
+const Two = () => {
    const cityInfo = {
   name: 'Хмельницький',
   country: 'Україна',
@@ -20,4 +20,4 @@ const Too = () => {
    );
 }
 
-export default Too;
+export default Two;
