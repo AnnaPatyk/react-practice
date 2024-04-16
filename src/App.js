@@ -1,12 +1,11 @@
 import "./App.css";
-import First from "./components/First";
-import Two from "./components/two";
-
+import Films from "./components/Films";
+import { films } from "./components/filmsArr.js";
+import "../src/components/films.css";
 function App() {
   return (
     <>
-      <First />
-      <Two />
+      <Films films={films} />
     </>
   );
 }
