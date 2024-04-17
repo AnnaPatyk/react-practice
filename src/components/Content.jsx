@@ -1,6 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+import VideoPlayer from "./VideoPlayer";
 
 const Content = ({ title, year, director, genre, rating, plot, trailer }) => {
+  const [btnState, setBtnState] = useState(false);
+  const videoId = () => {
+    const url = new URL(trailer);
+    return url.searchParams.get("v");
+  };
   return (
     <div className="contentBlok">
       <h3>
@@ -10,9 +16,16 @@ const Content = ({ title, year, director, genre, rating, plot, trailer }) => {
       <p>{genre}</p>
       <p>{rating}</p>
       <p>{plot}</p>
-      <a href={trailer} target="blank">
+
+      <button
+        onClick={() => {
+          setBtnState(!btnState);
+        }}
+      >
         Trailer
-      </a>
+      </button>
+
+      <VideoPlayer btnState={btnState} videoId={videoId} />
     </div>
   );
 };

@@ -1,17 +1,26 @@
-import React from "react";
 import Img from "./Img.jsx";
 import Content from "./Content.jsx";
+import Button from "./Button.jsx";
+import React, { useState } from "react";
 const Films = ({ films }) => {
-  console.log(films);
+  const [filmsList, setFilmsList] = useState(films);
+
+  const addFilms = (formData) => {
+    setFilmsList([...filmsList, formData]);
+  };
+
   return (
-    <div className="filmsBlock">
-      {films.map((film, index) => (
-        <div className="filmCard" key={index}>
-          <Img poster={film.poster} />
-          <Content {...film} />
-        </div>
-      ))}
-    </div>
+    <>
+      <Button addFilms={addFilms} />
+      <div className="filmsBlock">
+        {filmsList.map((film, index) => (
+          <div className="filmCard" key={index}>
+            <Img poster={film.poster} />
+            <Content {...film} />
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 
