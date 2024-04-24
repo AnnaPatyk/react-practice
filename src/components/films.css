@@ -10,7 +10,8 @@
 }
 
 .blockForm button,
-.contentBlok button {
+.contentBlok button,
+.filterBtn {
    background-color: #308c50;
    border: none;
    padding: 6px 12px;
@@ -18,7 +19,8 @@
    transition: all 0.5s;
 }
 .blockForm button:hover,
-.contentBlok button:hover {
+.contentBlok button:hover,
+.filterBtn:hover {
    background-color: #01260e;
    color: #aabfaf;
    box-shadow: 0px 0px 4px #aabfaf;
@@ -40,10 +42,15 @@
    align-items: center;
    flex: 0 1 100%;
 }
+.filterBtn {
+   flex: 0 1 100%;
+}
 .filterBlock button,
 .filterBlock label,
-.filterBlock select {
+.filterBlock select,
+.filterBtn {
    width: 50vw;
+   max-width: 200px;
 }
 .filmCard {
    display: flex;
@@ -89,8 +96,22 @@ iframe {
    flex-direction: column;
    gap: 16px;
 }
-.form-show input {
+.form-show input,
+select,
+.all {
    font-size: 18px;
    padding: 4px 8px;
    background-color: #aabfaf;
+}
+.btn {
+   margin-bottom: -30px;
+}
+.filterBlock label {
+   font-size: 18px;
+   font-weight: 600;
+   padding: 8px;
+   text-transform: capitalize;
+}
+.filterBlock select {
+   margin-top: 10px;
 }

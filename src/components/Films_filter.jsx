@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Label from "./Label";
+import classNames from "classnames";
 
 const FilmsFilter = ({ filmsList, setFilter, setFilteringUnit }) => {
   const [filterYear, setFilterYear] = useState([]);
@@ -19,7 +20,9 @@ const FilmsFilter = ({ filmsList, setFilter, setFilteringUnit }) => {
 
   const blockFilters = (
     <div className="filterBlock">
-      <button onClick={() => setFilter("All")}>All</button>
+      <button className="all" onClick={() => setFilter("All")}>
+        All
+      </button>
       <Label
         htmlFor={"year"}
         setFilter={setFilter}
@@ -41,11 +44,14 @@ const FilmsFilter = ({ filmsList, setFilter, setFilteringUnit }) => {
     setBtn(!btn);
   };
 
+  const btnClass = classNames("filterBlock", "btn");
   return (
     <>
-      <button className="filterBlock" onClick={handleButtonClick}>
-        {"filter"}
-      </button>
+      <div className={btnClass}>
+        <button className="filterBtn" onClick={handleButtonClick}>
+          {"Filter"}
+        </button>
+      </div>
       {btn ? blockFilters : ""}
     </>
   );
