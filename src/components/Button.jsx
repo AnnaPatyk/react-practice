@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Form from "./Form.jsx";
-const Button = ({ addFilms }) => {
+const Button = ({ addFilms, setFilter }) => {
   const [btnState, setBtnState] = useState(false);
   const [btnTitle, setBtnTitle] = useState(" Оpen the add movie form");
 
@@ -14,8 +14,15 @@ const Button = ({ addFilms }) => {
   };
   return (
     <div className="blockForm">
-      <button onClick={clickHandler}>{btnTitle}</button>
-      <Form btnState={btnState} addFilms={addFilms} />
+      <button
+        onClick={() => {
+          clickHandler();
+          setFilter("All");
+        }}
+      >
+        {btnTitle}
+      </button>
+      <Form btnState={btnState} addFilms={addFilms} setFilter={setFilter} />
     </div>
   );
 };

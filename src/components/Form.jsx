@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-const Form = ({ btnState, addFilms }) => {
+const Form = ({ btnState, addFilms, setFilter }) => {
   const [formData, setFormData] = useState({
     title: "",
     director: "",
@@ -100,6 +100,7 @@ const Form = ({ btnState, addFilms }) => {
         type="button"
         onClick={() => {
           clickHandler();
+          setFilter("All");
         }}
       >
         Add Film
