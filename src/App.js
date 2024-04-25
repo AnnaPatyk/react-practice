@@ -1,12 +1,13 @@
 import "./App.css";
-import Films from "./components/Films";
-import { films } from "./components/filmsArr.js";
 import "../src/components/films.css";
+import { Outlet } from "react-router-dom";
+import NavBar from "./components/header/NavBar.jsx";
 
 function App() {
   return (
     <>
-      <Films films={films} />
+      <NavBar />
+      <Outlet />
     </>
   );
 }
