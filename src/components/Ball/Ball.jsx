@@ -8,7 +8,6 @@ const Ball = () => {
   const [arrRespond, setArrRespond] = useState(ballRespond.uk);
   const [flag, setFlag] = useState(false);
   const [language, setLanguage] = useState("uk");
-  const [activeBtn, setActiveBtn] = useState("uk");
   const [message, setMessage] = useState(initialText[language]);
   const [initialRender, setInitialRender] = useState(true);
 
@@ -26,7 +25,7 @@ const Ball = () => {
   useEffect(() => {
     setMessage(initialText[language]);
     setMessage(!flag ? initialText[language] : randomRespond());
-  }, [activeBtn]);
+  }, [language]);
 
   function randomRespond() {
     const randomIndex = Math.floor(Math.random() * arrRespond.length);
@@ -43,9 +42,8 @@ const Ball = () => {
         ballRespond={ballRespond}
         setArrRespond={setArrRespond}
         setLanguage={setLanguage}
-        setActiveBtn={setActiveBtn}
-        activeBtn={activeBtn}
         setFlag={setFlag}
+        language={language}
       />
       <div className="ball-box">
         <div

@@ -3,6 +3,7 @@ import App from "../App";
 import Ball from "../components/Ball/Ball";
 import Films from "../components/Films";
 import { films } from "../components/filmsArr";
+import Game from "../components/game/Game";
 
 export const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ export const router = createBrowserRouter([
       {
         path: "ball",
         element: <Ball />,
+      },
+      {
+        path: "puzzle",
+        element: <Game />,
       },
     ],
   },

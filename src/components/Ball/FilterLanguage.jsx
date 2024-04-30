@@ -4,9 +4,8 @@ const FilterLanguage = ({
   ballRespond,
   setArrRespond,
   setLanguage,
-  setActiveBtn,
-  activeBtn,
   setFlag,
+  language,
 }) => {
   const arrLanguage = Object.keys(ballRespond);
   return (
@@ -18,11 +17,10 @@ const FilterLanguage = ({
             key={index}
             onClick={() => {
               setLanguage(el);
-              setActiveBtn(el);
               setArrRespond(ballRespond[el]);
               setFlag(false);
             }}
-            className={classNames({ active: activeBtn === el })}
+            className={classNames({ active: language === el })}
           >
             {el}
           </button>
