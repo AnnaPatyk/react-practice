@@ -9,6 +9,7 @@ const NavBar = () => {
         <NavLink to="/">Home</NavLink>
         <NavLink to="/ball">The ball of responsibility shifting</NavLink>
         <NavLink to="/puzzle">Puzzle</NavLink>
+        <NavLink to="/video">Video</NavLink>
       </nav>
     </header>
   );

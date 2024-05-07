@@ -4,6 +4,7 @@ import Ball from "../components/Ball/Ball";
 import Films from "../components/Films";
 import { films } from "../components/filmsArr";
 import Game from "../components/game/Game";
+import VideoPage from "../components/video/VideoPage";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ export const router = createBrowserRouter([
       {
         path: "puzzle",
         element: <Game />,
+      },
+      {
+        path: "video",
+        element: <VideoPage />,
       },
     ],
   },
