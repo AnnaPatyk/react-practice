@@ -28,6 +28,9 @@
 .contetnt {
    padding: 16px;
    text-align: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
 }
 .contetnt h3,
 .contetnt .price {
