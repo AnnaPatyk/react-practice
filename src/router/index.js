@@ -5,6 +5,8 @@ import Films from "../components/Films";
 import { films } from "../components/filmsArr";
 import Game from "../components/game/Game";
 import VideoPage from "../components/video/VideoPage";
+import Products from "../components/products/Products";
+import SelectedProducts from "../components/products/SelectedProducts";
 
 export const router = createBrowserRouter([
   {
@@ -27,6 +29,14 @@ export const router = createBrowserRouter([
       {
         path: "video",
         element: <VideoPage />,
+      },
+      {
+        path: "products",
+        element: <Products />,
+      },
+      {
+        path: "selectedProducts",
+        element: <SelectedProducts />,
       },
     ],
   },
