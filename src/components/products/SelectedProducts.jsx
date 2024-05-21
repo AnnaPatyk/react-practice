@@ -20,4 +20,4 @@ const SelectedProducts = () => {
   );
 };
 
-export default SelectedProducts;
+export default React.memo(SelectedProducts);

@@ -41,4 +41,4 @@ const Like = ({ products }) => {
   );
 };
 
-export default Like;
+export default React.memo(Like);

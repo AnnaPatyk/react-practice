@@ -5,6 +5,7 @@ const SelectedProductsProvider = ({ children }) => {
   const [selectedProducts, setSelectedProducts] = useState(
     JSON.parse(localStorage.getItem("selectedProducts")) || []
   );
+  
   const addSelectedArr = (products) => {
     selectedProducts.push(products);
     setSelectedProducts([...selectedProducts]);
