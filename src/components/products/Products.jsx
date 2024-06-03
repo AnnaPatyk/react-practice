@@ -3,13 +3,15 @@ import React, { useEffect, useMemo } from "react";
 import { useState } from "react";
 import Product from "./Product";
 import FilterCategory from "./FilterCategory";
+import InputNumberFilter from "./InputNumberFilter";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     getProducts();
   }, []);
-  const [filtercategory, setFiltercategory] = useState('all')
+  const [filtercategory, setFiltercategory] = useState('all');
+  const [textSearch, setTextSearch] = useState('')
   const getProducts = async () => {
     const { data } = await axios.get("https://fakestoreapi.com/products");
     setProducts(data);
@@ -27,8 +29,15 @@ const Products = () => {
       }
      }
  }),[filtercategory]) 
+ const searchHandler= (e)=>{
+   setTextSearch(e.target.value);
+
+ }
+
+
   return (
   <>
+    <InputNumberFilter/>
     <FilterCategory products={products} handlerClickFilter={handlerClickFilter} ></FilterCategory>
     <div className="products">
       {products.filter(filterMap[filtercategory]).map((product, index) => {
