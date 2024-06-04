@@ -7,6 +7,11 @@ import Game from "../components/game/Game";
 import VideoPage from "../components/video/VideoPage";
 import Products from "../components/products/Products";
 import SelectedProducts from "../components/products/SelectedProducts";
+import { getCategory, getProductCategory, getProducts } from "../api/Loader";
+import ProductItem from "../components/products/ProductItem";
+import FilterCategory from "../components/products/FilterCategory";
+import ProductManager from "../components/products/ProductManager";
+import Product from "../components/products/Product";
 
 export const router = createBrowserRouter([
   {
@@ -15,7 +20,7 @@ export const router = createBrowserRouter([
     errorElement: <h1>Error</h1>,
     children: [
       {
-        path: "/",
+         index: true,
         element: <Films films={films} />,
       },
       {
@@ -32,9 +37,22 @@ export const router = createBrowserRouter([
       },
       {
         path: "products",
-        element: <Products />,
+        element: <ProductManager />,
+        loader:getProducts,
+        children:[
+         {
+          index:true,
+          loader: getProducts,
+          element:<Products/>
+         },
+         {
+          path:"category/:category",
+          loader: getProductCategory,
+          element:<Products/>
+        }
+       ]
       },
-      {
+         {
         path: "selectedProducts",
         element: <SelectedProducts />,
       },

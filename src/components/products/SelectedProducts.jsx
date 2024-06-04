@@ -12,8 +12,8 @@ const SelectedProducts = () => {
   return (
     <div className="selected-products">
       {selectedProducts.length
-        ? selectedProducts.map((product) => {
-            return <Product product={product} />;
+        ? selectedProducts.map((product, index) => {
+            return <Product key={index} product={product} />;
           })
         : emptyBlock}
     </div>

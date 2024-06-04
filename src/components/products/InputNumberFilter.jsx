@@ -1,22 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { InputNumber } from 'antd';
-import { Button, Flex } from 'antd';
+import { Flex } from 'antd';
+import { FilterProducts } from '../../context/FilterProducts';
 
-export default function InputNumberFilter() {
-   const [minValue, setMinValue] = useState(1);
-   const [maxValue, setMaxValue] = useState(10)
-  const onChangeMin = (value) => {
-   setMinValue(value)
-};
-  const onChangeMax = (value) => {
-   setMaxValue(value)
-};
-console.log(minValue)
+export default function InputNumberFilter({onChangeMin ,onChangeMax,minValue,maxValue, min, max}) {
+  
   return (
     <Flex gap="small" wrap>
-      <InputNumber addonBefore={'від'} min={1} max={10} defaultValue={1}   onChange={onChangeMin} />
-       <InputNumber addonBefore={'до'} min={1} max={10} defaultValue={10} onChange={onChangeMax} />
-       <Button type="primary">Пошук</Button>
+      <InputNumber addonBefore={'від'} min={min} max={max} step={0.1} value={minValue} onChange={onChangeMin} />
+       <InputNumber addonBefore={'до'} min={min} max={max} step={0.1} value={maxValue}  onChange={onChangeMax} />
     </Flex>
   )
 }
