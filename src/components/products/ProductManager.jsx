@@ -1,17 +1,21 @@
 import React, { useState }  from "react";
 import FilterCategory from "./FilterCategory";
-import {  Outlet } from "react-router-dom";
+import {  Outlet, useSearchParams } from "react-router-dom";
 import { FilterProducts } from "../../context/FilterProducts";
 
 
 export default function ProductManager() { 
-   const [minValue, setMinValue] = useState(1);
-   const [maxValue, setMaxValue] = useState(5)
+   const [searchParams, setSearchParams] = useSearchParams();
+   const [minValue, setMinValue] = useState(searchParams.get('min')||1);
+   const [maxValue, setMaxValue] = useState(searchParams.get('max')||5)
+   
   const onChangeMin = (value) => {
-   setMinValue(value)
+   setMinValue(value);
+    setSearchParams({ ...Object.fromEntries(searchParams), min: value });
 };
   const onChangeMax = (value) => {
-   setMaxValue(value)
+   setMaxValue(value);
+   setSearchParams({ ...Object.fromEntries(searchParams), max: value });
 };
  const handlerClick = ()=>{
     console.log("Handler clicked!");
