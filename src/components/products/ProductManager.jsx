@@ -18,7 +18,7 @@ export default function ProductManager() {
    setSearchParams({ ...Object.fromEntries(searchParams), max: value });
 };
  const handlerClick = ()=>{
-    console.log("Handler clicked!");
+   
    setMinValue(1);
    setMaxValue(5);
  }

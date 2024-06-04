@@ -50,3 +50,24 @@
    -webkit-filter: drop-shadow(#d9042b);
    filter: drop-shadow(2px 2px 4px #ea0e0e);
 }
+.filter {
+   padding: 8px;
+}
+.filter a {
+   font-weight: 600;
+   color: #038c8c;
+   text-transform: capitalize;
+   background-color: #f2cc85;
+   line-height: 2;
+   padding-inline: 0.5rem;
+   border-radius: 12px;
+   transition: all 0.5s;
+}
+.filter a:hover {
+   transform: scale(1.1);
+   transition: all 0.5s;
+   background-color: #f5975f;
+}
+a.active {
+   background-color: #f5965f;
+}
